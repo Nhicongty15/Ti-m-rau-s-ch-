@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Tiệm Rau Sạch</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rau sạch nhà trồng ở Đồng Nai, hái 6h sáng, giao 18h tận nhà tại TP.HCM. Sạch từ đất, thật từ tâm.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;600;700&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap">
+<style>
+/* Bố cục theo trang chủ Cocoon: thanh ưu đãi đậm, đầu trang chữ (logo giữa), hero chia đôi ảnh + khối màu, khối sản phẩm nổi bật, ảnh tràn viền có thẻ trắng, dải chữ chạy, 3 cột cam kết, banner chữ lớn trên ảnh, cột tiêu đề + băng chuyền sản phẩm, câu chuyện có ảnh ghép, bài viết, lưới ảnh nhật ký, hỏi đáp, chân trang ảnh + cột link. Màu trắng – xanh lá. */
+:root{
+  --bg:#FFFFFF; --soft:#F3F7F1; --soft2:#E8F0E5; --line:#E1E8DE;
+  --deep:#163D26; --on-deep:#F5FAF3; --on-deep-muted:#B9CDBE;
+  --green:#1E7B43; --ink:#16271C; --body:#3E4B42; --muted:#66756B;
+  --btn:#163D26; --btn-fg:#F5FAF3; --card:#F1F5EF; --danger:#B3261E; --warn:#EEF6EA;
+  --serif:"Vollkorn", Georgia, "Times New Roman", serif;
+  --sans:"Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --cond:"Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --maxw:1320px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1611; --soft:#131F17; --soft2:#18281D; --line:#263629;
+  --deep:#0B2215; --on-deep:#EAF3EC; --on-deep-muted:#9FB6A6;
+  --green:#66C98F; --ink:#E6EFE8; --body:#C3D0C6; --muted:#9AAA9F;
+  --btn:#66C98F; --btn-fg:#0B1A10; --card:#17241B; --danger:#FF8A80; --warn:#18281D; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1611; --soft:#131F17; --soft2:#18281D; --line:#263629;
+  --deep:#0B2215; --on-deep:#EAF3EC; --on-deep-muted:#9FB6A6;
+  --green:#66C98F; --ink:#E6EFE8; --body:#C3D0C6; --muted:#9AAA9F;
+  --btn:#66C98F; --btn-fg:#0B1A10; --card:#17241B; --danger:#FF8A80; --warn:#18281D; color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:400;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.in{max-width:var(--maxw);margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.cond{font-family:var(--cond);text-transform:uppercase;letter-spacing:.02em}
+.title{display:flex;flex-direction:column;gap:2px}
+.title i{font-family:var(--serif);font-style:italic;font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--ink);line-height:1.05}
+.title b{font-family:var(--cond);font-weight:600;text-transform:uppercase;font-size:clamp(2rem,3.8vw,3rem);color:var(--ink);line-height:1;letter-spacing:.01em}
+.title.center{align-items:center;text-align:center}
+.lead{color:var(--body);max-width:52ch}
+.sec{padding-block:96px}
+.soft{background:var(--soft)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:56px;padding:14px 24px;border:0;border-radius:4px;background:var(--btn);color:var(--btn-fg);font:500 1.05rem var(--cond);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.btn:hover{opacity:.9}
+.btn svg{flex:none}
+.btn.light{background:var(--on-deep);color:var(--deep)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.sm{min-height:44px;padding:10px 16px;font-size:.95rem;gap:12px}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.link{font:600 .95rem var(--cond);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);text-decoration:none;border:0;border-bottom:1px solid currentColor;padding:0 0 2px;background:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+.promo{background:var(--deep);color:var(--on-deep);font-size:.88rem;text-align:center;padding-block:9px}
+.promo b{font-weight:700}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+header.site>.in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;gap:16px}
+.navl,.navr{display:flex;align-items:center;gap:28px;font-size:.98rem}
+.navr{justify-content:flex-end}
+.navl a,.navr a,.navr button{text-decoration:none;color:var(--body);background:none;border:0;font:inherit;cursor:pointer;padding:6px 0}
+.navl a:hover,.navr a:hover,.navr button:hover{color:var(--green)}
+.ic{background:none;border:0;color:var(--ink);cursor:pointer;width:40px;height:40px;display:grid;place-items:center;padding:0}
+.logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1}
+.logo .t{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--green)}
+.logo .n{font-family:var(--serif);font-weight:600;font-size:1.6rem;letter-spacing:.12em;color:var(--green);text-transform:uppercase;margin-top:-2px}
+.logo .s{font-family:var(--cond);font-size:.62rem;letter-spacing:.3em;color:var(--green);text-transform:uppercase;margin-top:3px}
+.mob{display:none}
+.searchbar{border-top:1px solid var(--line);background:var(--bg)}
+.searchbar .in{display:flex;align-items:center;gap:12px;padding-block:12px}
+.searchbar input{flex:1;border:0;border-bottom:1px solid var(--ink);border-radius:0;background:transparent;font:inherit;font-size:1.05rem;padding:8px 0;color:var(--ink);min-height:44px}
+.searchbar input:focus{outline:none;border-color:var(--green)}
+.menu{border-top:1px solid var(--line);background:var(--bg)}
+.menu a{display:block;padding:14px max(20px, env(safe-area-inset-left, 0px));border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-family:var(--cond);text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem}
+@media (max-width:1000px){
+  .navl a,.navr .hide-m{display:none}
+  .mob{display:grid}
+  .navl{gap:2px}.navr{gap:8px}
+}
+@media (max-width:420px){.logo .n{font-size:1.3rem}.logo .s{display:none}}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:min(760px,calc(100vh - 120px));border-bottom:1px solid var(--line)}
+.hero .ph{position:relative;overflow:hidden;background:var(--soft2);min-height:420px}
+.hero .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .panel{background:var(--deep);color:var(--on-deep);display:flex;flex-direction:column;justify-content:center;padding:64px max(20px,6vw) 48px max(20px,5vw)}
+.hero .k{font-family:var(--cond);font-weight:400;font-size:clamp(1.2rem,2vw,1.7rem);text-transform:uppercase;letter-spacing:.02em;color:var(--on-deep)}
+.hero h1{font-family:var(--serif);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.06;color:var(--on-deep);margin-top:14px;max-width:13ch}
+.hero .txt{margin-top:22px;color:var(--on-deep-muted);max-width:46ch;font-size:1.02rem}
+.hero .btn{margin-top:34px;max-width:420px}
+.dots{display:flex;gap:14px;margin-top:40px}
+.dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--on-deep);opacity:.35;cursor:pointer;position:relative}
+.dots button::after{content:"";position:absolute;inset:-12px}
+.dots button[aria-current="true"]{opacity:1}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.hero .ph{aspect-ratio:1/1;min-height:0}.hero .panel{padding-block:44px 40px}}
+
+.feature{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;background:var(--soft)}
+.feature .ph{aspect-ratio:1/1;overflow:hidden}
+.feature .ph img{width:100%;height:100%;object-fit:cover}
+.feature .tx{padding:56px max(20px,6vw);display:flex;flex-direction:column;gap:16px}
+.feature h2{font-family:var(--serif);font-size:clamp(2.4rem,4.4vw,3.6rem)}
+.feature .meta{font-family:var(--cond);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-size:1rem}
+.price-big{font-size:1.5rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.price-big small{font-weight:400;font-size:.9rem;color:var(--muted);margin-left:8px}
+.row-btn{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+@media (max-width:860px){.feature{grid-template-columns:1fr}}
+
+.brand{position:relative;min-height:600px;display:grid;place-items:center;padding:64px 20px;overflow:hidden}
+.brand>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.brand .card{position:relative;background:var(--bg);max-width:560px;width:100%;padding:44px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;border-radius:4px}
+.brand .card .title{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:10px}
+.brand .card .btn{width:100%;max-width:360px}
+@media (max-width:520px){.brand .card{padding:32px 22px}}
+
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding-block:22px;background:var(--bg)}
+.marquee .track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.marquee span{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:clamp(3rem,7vw,5.6rem);line-height:1;color:var(--deep);white-space:nowrap;padding-right:48px}
+:root[data-theme="dark"] .marquee span{color:var(--green)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .marquee span{color:var(--green)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.certs h2{font-family:var(--cond);font-weight:600;text-transform:uppercase;text-align:center;font-size:1.5rem;letter-spacing:.03em}
+.certs .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;margin-top:56px}
+.cert{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.cert .lg{width:120px;height:120px;border-radius:50%;overflow:hidden;margin-bottom:8px}
+.cert .lg img{width:100%;height:100%;object-fit:cover}
+.cert h3{font-family:var(--serif);font-size:1.75rem}
+.cert .sub{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);font-size:1rem}
+.cert p{color:var(--muted);font-size:.95rem;max-width:36ch}
+.note{text-align:center;color:var(--muted);font-size:.88rem;margin-top:44px}
+@media (max-width:820px){.certs .cols{grid-template-columns:1fr;gap:44px}}
+
+.banner{position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden;padding-block:64px}
+.banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,30,18,.66),rgba(10,30,18,.2) 62%,rgba(10,30,18,0));z-index:1}
+.banner .in{position:relative;z-index:2;width:100%}
+.banner h2{font-family:var(--cond);font-weight:600;text-transform:uppercase;color:#fff;font-size:clamp(3.2rem,9vw,8rem);line-height:.92}
+.banner p{color:#EAF3EC;max-width:44ch;margin-top:18px;font-size:1.05rem}
+.banner .btn{margin-top:28px;background:#fff;color:#163D26}
+
+.shop{display:grid;grid-template-columns:minmax(260px,1fr) 2.6fr;gap:44px;align-items:start}
+.shop .side{display:flex;flex-direction:column;gap:20px;position:sticky;top:110px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px}
+.tab{background:none;border:0;border-bottom:2px solid transparent;padding:6px 0;font:500 1.05rem var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);cursor:pointer}
+.tab[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.arrows{display:flex;gap:10px}
+.arrows button{width:48px;height:48px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.slider{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.slider::-webkit-scrollbar{display:none}
+.progress{height:2px;background:var(--line);margin-top:28px;position:relative}
+.progress i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:30%}
+.card{scroll-snap-align:start;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card .ph{position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:var(--card);cursor:pointer;border:0;padding:0;width:100%}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card .ph:hover img{transform:scale(1.04)}
+.badge{position:absolute;top:12px;left:12px;background:var(--bg);color:var(--ink);font:600 .8rem var(--cond);text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:2px}
+.card .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.card h3{font-family:var(--sans);font-weight:700;font-size:1.05rem;color:var(--ink);line-height:1.35}
+.card .ds{font-family:var(--cond);text-transform:uppercase;font-size:.84rem;letter-spacing:.04em;color:var(--muted);line-height:1.35;margin-top:4px}
+.card .pr{margin-top:8px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.card .pr small{font-weight:400;color:var(--muted);margin-left:6px;font-size:.82rem}
+.bag{width:48px;height:48px;border-radius:4px;border:0;background:var(--soft2);color:var(--ink);cursor:pointer;display:grid;place-items:center;flex:none}
+.bag:hover{background:var(--btn);color:var(--btn-fg)}
+.paused{margin-top:22px;color:var(--muted);font-size:.9rem}
+@media (max-width:1000px){.shop{grid-template-columns:1fr}.shop .side{position:static}.slider{grid-auto-columns:calc((100% - 24px)/2.15)}}
+@media (max-width:560px){.slider{grid-auto-columns:78%;gap:16px}}
+
+.headrow{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.combos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:48px}
+.combo{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.combo .ph{aspect-ratio:4/3;overflow:hidden}
+.combo .ph img{width:100%;height:100%;object-fit:cover}
+.combo .bd{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.combo h3{font-family:var(--serif);font-size:1.75rem}
+.combo .for{font-family:var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-size:.9rem}
+.combo ul{list-style:none;padding:0;margin:0;font-size:.95rem}
+.combo li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.combo .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:6px}
+.combo .tot b{font-size:1.4rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.combo .tot span{color:var(--muted);font-size:.9rem}
+@media (max-width:900px){.combos{grid-template-columns:1fr}}
+
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.collage .a{grid-row:span 2}
+.collage .b,.collage .c{aspect-ratio:1/1}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--ink);margin-top:18px}
+.timeline{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:84px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.timeline .h{font-family:var(--serif);font-size:1.9rem;color:var(--green);line-height:1}
+.timeline b{display:block;color:var(--ink)}
+.timeline span{color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.story{grid-template-columns:1fr;gap:40px}}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+.why h3{font-family:var(--serif);font-size:1.45rem;margin-bottom:6px}
+.why p{color:var(--muted);font-size:.96rem}
+@media (max-width:760px){.why{grid-template-columns:1fr}}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px}
+.step .n{font-family:var(--serif);font-size:3rem;color:var(--green);line-height:1}
+.step h3{font-family:var(--cond);font-weight:600;text-transform:uppercase;font-size:1.3rem;margin-top:10px;letter-spacing:.02em}
+.step p{color:var(--muted);margin-top:6px}
+.tables{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:64px}
+.tbl{min-width:0}
+.tbl h3{font-family:var(--cond);font-weight:600;text-transform:uppercase;font-size:1.15rem;letter-spacing:.03em;margin-bottom:12px}
+.tbl p{color:var(--muted);font-size:.92rem;margin-top:12px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:12px 10px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .8rem var(--cond);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+.policy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:56px;padding-top:40px;border-top:1px solid var(--line)}
+.policy h3{font-family:var(--serif);font-size:1.4rem;margin-bottom:8px}
+.policy p{color:var(--muted);font-size:.95rem}
+@media (max-width:860px){.steps,.tables,.policy{grid-template-columns:1fr}}
+
+.arts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:44px}
+.art .ph{aspect-ratio:4/3;overflow:hidden;border-radius:4px}
+.art .ph img{width:100%;height:100%;object-fit:cover}
+.art .m{font-size:.85rem;color:var(--muted);margin-top:16px}
+.art h3{font-family:var(--serif);font-size:1.45rem;margin-top:6px}
+.art p{color:var(--muted);font-size:.95rem;margin-top:8px}
+@media (max-width:860px){.arts{grid-template-columns:1fr}}
+
+.gram{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:40px;padding-inline:8px}
+.gram img{aspect-ratio:1/1;object-fit:cover;width:100%}
+@media (max-width:860px){.gram{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.rv{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center}
+@media (max-width:860px){.rv{grid-template-columns:1fr;gap:24px}}
+
+.faq{max-width:860px;margin:44px auto 0;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-size:1.06rem;color:var(--ink);font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--cond);font-size:1.6rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding-bottom:22px;color:var(--muted);max-width:70ch}
+
+.signup{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.signup h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);max-width:22ch}
+.signup p{color:var(--muted);max-width:52ch}
+
+footer.site{display:grid;grid-template-columns:1fr 1.25fr;border-top:1px solid var(--line)}
+footer.site .ph{min-height:420px;position:relative;overflow:hidden}
+footer.site .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+footer.site .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;padding:56px max(20px,4vw) 40px}
+footer.site h4{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.1rem;color:var(--ink);margin-bottom:12px}
+footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:.95rem}
+footer.site ul a{text-decoration:none;color:var(--body)}
+footer.site ul a:hover{color:var(--green)}
+.legal{grid-column:1/-1;background:var(--deep);color:var(--on-deep);padding:28px max(20px,4vw) calc(88px + env(safe-area-inset-bottom,0px))}
+.legal b{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:6px}
+.legal p{color:var(--on-deep-muted);font-size:.84rem;max-width:110ch}
+.legal p+p{margin-top:6px}
+.legal a{color:var(--on-deep)}
+@media (max-width:860px){footer.site{grid-template-columns:1fr}footer.site .ph{min-height:260px}}
+@media (max-width:480px){footer.site .cols{grid-template-columns:1fr}}
+
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:13px 22px;font:700 .95rem var(--sans);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.12);display:flex;align-items:center;gap:8px}
+.chat{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:65;width:min(400px,calc(100vw - 36px));height:min(620px,calc(100vh - 130px));background:var(--bg);border:1px solid var(--line);border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden}
+.chat-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:var(--deep);color:var(--on-deep)}
+.chat-head b{font-family:var(--serif);font-weight:500;font-size:1.2rem;display:block}
+.chat-head small{color:var(--on-deep-muted);font-size:.8rem}
+.chat-head .x{background:none;border:0;color:var(--on-deep);cursor:pointer;width:36px;height:36px}
+.zl{font:600 .85rem var(--cond);text-transform:uppercase;letter-spacing:.06em;color:var(--deep);background:var(--on-deep);text-decoration:none;padding:7px 12px;border-radius:3px}
+.log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--soft)}
+.msg{max-width:88%;padding:10px 14px;border-radius:4px;white-space:pre-line;overflow-wrap:anywhere;font-size:.94rem}
+.msg.bot{background:var(--bg);border:1px solid var(--line);align-self:flex-start}
+.msg.me{background:var(--deep);color:var(--on-deep);align-self:flex-end}
+.msg table{font-size:.86rem;margin-top:6px}
+.msg td{padding:3px 6px 3px 0;border:0}
+.acts{border-top:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:8px;max-height:54%;overflow-y:auto;background:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:3px;padding:8px 12px;font:600 .88rem var(--sans);cursor:pointer;min-height:40px;text-align:left}
+.chip:hover{border-color:var(--ink)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;padding:9px 10px;border:1px solid var(--line);border-radius:3px;cursor:pointer}
+.check input{width:18px;height:18px;min-height:0;margin-top:2px;accent-color:var(--green);flex:none}
+.check:has(input:checked){border-color:var(--green);background:var(--soft)}
+
+.scrim{position:fixed;inset:0;background:rgba(8,20,12,.5);z-index:70}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--bg);z-index:80;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:1.35rem}
+.drawer .content{flex:1;overflow-y:auto;padding:18px 22px;display:flex;flex-direction:column;gap:16px}
+.drawer .foot{border-top:1px solid var(--line);padding:16px 22px;display:flex;flex-direction:column;gap:10px;background:var(--soft)}
+.modal{position:fixed;inset:0;z-index:85;display:grid;place-items:center;padding:16px}
+.modal .box{background:var(--bg);border-radius:6px;max-width:860px;width:100%;max-height:calc(100vh - 32px);overflow-y:auto;display:grid;grid-template-columns:1fr 1fr}
+.modal .box .ph{min-height:320px}
+.modal .box .ph img{width:100%;height:100%;object-fit:cover}
+.modal .info{padding:32px;display:flex;flex-direction:column;gap:14px}
+.modal h2{font-family:var(--serif);font-size:2.2rem}
+.modal dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-size:.94rem;border-top:1px solid var(--line);padding-top:14px}
+.modal dt{color:var(--muted)} .modal dd{margin:0;color:var(--ink)}
+@media (max-width:700px){.modal .box{grid-template-columns:1fr}.modal .box .ph{min-height:0;aspect-ratio:1/1}.modal .info{padding:24px}}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center}
+.line img{width:64px;height:64px;object-fit:cover;border-radius:4px}
+.line .name{font-weight:700;color:var(--ink);font-size:.95rem}
+.line .sub{font-size:.82rem;color:var(--muted)}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:4px}
+.stepper button{width:36px;height:36px;border:0;background:none;color:var(--ink);font-size:1.05rem;cursor:pointer}
+.stepper span{min-width:24px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:.85rem;font-weight:700;color:var(--ink)}
+.field .hint{font-size:.8rem;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;min-height:46px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:420px){.two{grid-template-columns:1fr}}
+.sumrow{display:flex;justify-content:space-between;gap:12px;font-size:.95rem;font-variant-numeric:tabular-nums}
+.sumrow.total{font-size:1.15rem;font-weight:700;color:var(--ink)}
+.warn{background:var(--warn);border:1px solid var(--line);border-radius:4px;padding:10px 12px;font-size:.88rem;color:var(--ink)}
+.err{color:var(--danger);font-size:.86rem}
+.qr{align-self:center;width:220px;height:220px;border:1px dashed var(--ink);display:grid;place-items:center;text-align:center;padding:16px;color:var(--muted);font-size:.88rem;background:var(--soft)}
+.demo{background:var(--danger);color:#fff;text-align:center;font:600 .95rem var(--cond);text-transform:uppercase;letter-spacing:.06em;padding:8px;border-radius:3px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.94rem;margin:0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+.empty{color:var(--muted);text-align:center;padding:24px 8px}
+.toast{position:fixed;left:50%;bottom:calc(90px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--deep);color:var(--on-deep);padding:11px 20px;border-radius:4px;font-size:.92rem;z-index:90}
+</style>
+
+<div class="promo"><div class="in">Rau hái <b>6h sáng</b>, đặt trước <b>12h</b> nhận rau <b>18h</b> cùng ngày</div></div>
+
+<header class="site">
+  <div class="in">
+    <nav class="navl" aria-label="Mục chính">
+      <button class="ic mob" id="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="ic" id="search-btn" type="button" aria-label="Tìm rau" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a href="#rau">Rau hôm nay</a><a href="#gio">Giỏ gợi ý</a><a href="#vuon">Về vườn</a><a href="#dat-giao">Đặt và giao</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="Tiệm Rau Sạch, về đầu trang"><span class="t">tiệm</span><span class="n">Rau Sạch</span><span class="s">Sạch từ đất · thật từ tâm</span></a>
+    <div class="navr">
+      <a class="hide-m" href="#hoi-dap">Hỏi đáp</a>
+      <button class="hide-m" type="button" data-chat="1">Tư vấn</button>
+      <button type="button" id="cart-btn" aria-label="Mở giỏ hàng">Giỏ hàng <span id="cart-count">(0)</span></button>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar" hidden><div class="in"><input id="q" type="search" placeholder="Tìm rau: rau muống, cải ngọt, mồng tơi…" aria-label="Tìm rau"><button class="ic" type="button" id="search-close" aria-label="Đóng tìm kiếm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div>
+  <nav class="menu" id="menu" hidden aria-label="Menu điện thoại"><a href="#rau">Rau hôm nay</a><a href="#gio">Giỏ gợi ý</a><a href="#vuon">Về vườn</a><a href="#cam-ket">Cam kết</a><a href="#dat-giao">Đặt và giao</a><a href="#hoi-dap">Hỏi đáp</a></nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Tin nổi bật">
+    <div class="ph"><img id="hero-img" src="img/hero.jpg" alt="Người làm vườn hái rau vào rổ" width="1200" height="1200" fetchpriority="high"></div>
+    <div class="panel">
+      <p class="k" id="hero-k">Hái 6h sáng · Giao 18h</p>
+      <h1 id="hero-t">Rau sạch nhà trồng, ăn là yên lòng</h1>
+      <p class="txt" id="hero-x">Rau từ vườn nhà ở Đồng Nai, đóng túi có tem ngày hái và giao tới bếp nhà bạn lúc 6 giờ chiều cùng ngày.</p>
+      <a class="btn light" id="hero-b" href="#rau"><span id="hero-bl">Xem rau hôm nay</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+      <div class="dots" id="dots" role="group" aria-label="Chọn tin"></div>
+    </div>
+  </section>
+
+  <section class="feature" aria-labelledby="ft-title">
+    <div class="ph"><img src="img/rau-muong.jpg" alt="Những bó rau muống tươi" width="600" height="600" loading="lazy"></div>
+    <div class="tx">
+      <p class="meta">Bán chạy nhất · Gói 500 g</p>
+      <h2 id="ft-title">Rau muống</h2>
+      <p class="lead">Ngọn non, cọng giòn, hái lúc 6 giờ sáng rồi bó ngay ở vườn. Xào tỏi, luộc chấm hay nấu canh chua đều ngon.</p>
+      <p class="price-big">13.000 đ<small>26.000 đ/kg</small></p>
+      <div class="row-btn"><button class="btn" type="button" data-add="rau-muong">Thêm vào giỏ <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.5 11h-11z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></button><button class="btn line" type="button" data-view="rau-muong">Xem chi tiết</button></div>
+    </div>
+  </section>
+
+  <section class="brand" id="triet-ly" aria-labelledby="tl-title">
+    <img src="img/gian-muop.jpg" alt="Giàn mướp hương đang ra quả" width="1600" height="600" loading="lazy">
+    <div class="card">
+      <h2 class="title" id="tl-title"><i>Triết lý</i><b>Của tiệm</b></h2>
+      <p>Tiệm trồng rau trên đất nhà ở Đồng Nai, cách TP.HCM khoảng 1 đến 1,5 giờ, và chăm rau như cho chính nhà mình ăn. Mọi điều tiệm nói về rau đều có video, nhật ký và kết quả test để bạn tự kiểm.</p>
+      <a class="btn" href="#vuon">Tìm hiểu thêm <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><span>Sạch từ đất, thật từ tâm ·</span><span>Hái 6h sáng · Giao 18h ·</span><span>Sạch từ đất, thật từ tâm ·</span><span>Hái 6h sáng · Giao 18h ·</span></div></div>
+
+  <section class="sec certs" id="cam-ket" aria-labelledby="ck-title">
+    <div class="in">
+      <h2 id="ck-title">Ba điều tiệm cam kết với bạn</h2>
+      <div class="cols">
+        <div class="cert"><div class="lg"><img src="img/life-tay-hai.jpg" alt="Đôi tay đang hái rau ở luống" width="600" height="600" loading="lazy"></div><h3>Video vườn thật</h3><p class="sub">Quét mã QR trên tem túi rau</p><p>Video luống rau, ngày gieo và ngày hái. Mã QR trên tem mở đúng luống rau trong túi của bạn.</p></div>
+        <div class="cert"><div class="lg"><img src="img/life-luong-hanh.jpg" alt="Luống hành lá đang lên" width="600" height="600" loading="lazy"></div><h3>Nhật ký chăm rau</h3><p class="sub">Ghi công khai mỗi ngày</p><p>Bón gì, có phun thuốc không, phun ngày nào và chờ bao nhiêu ngày mới hái, tiệm ghi lại hết.</p></div>
+        <div class="cert"><div class="lg"><img src="img/cai-be-xanh.jpg" alt="Luống cải bẹ xanh" width="600" height="600" loading="lazy"></div><h3>Test rau mỗi tuần</h3><p class="sub">Đăng kết quả, kể cả chưa đẹp</p><p>Tiệm test nhanh dư lượng thuốc trừ sâu trước ống kính và đăng kết quả lên nhóm Zalo khách quen.</p></div>
+      </div>
+      <p class="note">Tiệm chỉ ghi "VietGAP" hay "không thuốc trừ sâu" khi đã có giấy tờ hoặc kết quả xét nghiệm chứng minh.</p>
+    </div>
+  </section>
+
+  <section class="banner" aria-labelledby="bn-title">
+    <img src="img/banner-luong.jpg" alt="Luống rau muống và xà lách xanh mướt" width="1600" height="600" loading="lazy">
+    <div class="in">
+      <h2 id="bn-title">Đặt trước 12h<br>Nhận rau 18h</h2>
+      <p>Rau hái buổi sáng, chở về thành phố, giao tới bếp nhà bạn trong buổi chiều. Muốn nhận ngày khác thì chọn ngày trong giỏ hàng.</p>
+      <a class="btn" href="#dat-giao">Xem cách đặt <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <section class="sec" id="rau" aria-labelledby="rau-title">
+    <div class="in shop">
+      <div class="side">
+        <h2 class="title" id="rau-title"><i>Rau</i><b>Hôm nay</b></h2>
+        <p class="lead">Giá theo gói, đã gồm túi trong suốt, tem nhãn và tem ngày hái. Bấm vào ảnh để xem chi tiết từng loại rau.</p>
+        <div class="tabs" id="tabs" role="group" aria-label="Lọc rau"></div>
+        <div class="arrows"><button type="button" id="prev" aria-label="Rau trước"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button><button type="button" id="next" aria-label="Rau tiếp theo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button></div>
+      </div>
+      <div style="min-width:0">
+        <div class="slider" id="slider"></div>
+        <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+        <p class="paused">Xà lách xoăn đang tạm ngưng, tiệm bán lại khi giá chợ phù hợp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec soft" id="gio" aria-labelledby="gio-title">
+    <div class="in">
+      <div class="headrow"><h2 class="title" id="gio-title"><i>Giỏ rau</i><b>Gợi ý</b></h2><p class="lead">Giá giỏ bằng đúng tổng giá các gói. Thêm vào giỏ rồi vẫn chỉnh số lượng được.</p></div>
+      <div class="combos" id="combos"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="vuon" aria-labelledby="vuon-title">
+    <div class="in">
+      <div class="story">
+        <div class="collage">
+          <img class="a" src="img/life-thu-hoach.jpg" alt="Người làm vườn bỏ rau vừa hái vào rổ" width="600" height="600" loading="lazy">
+          <img class="b" src="img/life-bac-lam-vuon.jpg" alt="Bác làm vườn cầm cây rau vừa cắt" width="600" height="600" loading="lazy">
+          <img class="c" src="img/life-rau-muong-tay.jpg" alt="Rau muống vừa nhặt trong hộp" width="600" height="600" loading="lazy">
+        </div>
+        <div>
+          <h2 class="title" id="vuon-title"><i>Câu chuyện</i><b>Khu vườn</b></h2>
+          <p class="quote">Từ luống rau tới bếp nhà bạn trong 12 giờ.</p>
+          <ol class="timeline">
+            <li><span class="h">6h</span><div><b>Hái rau ở vườn Đồng Nai</b><span>Đóng túi trong suốt 500 g, dán tem nhãn, tem ngày hái và tem niêm phong.</span></div></li>
+            <li><span class="h">8h</span><div><b>Về tiệm, cất khu bảo quản</b><span>Giữ mát, đếm số gói từng loại và báo lên nhóm Zalo và website.</span></div></li>
+            <li><span class="h">12h</span><div><b>Chốt đơn trong ngày</b><span>Đơn đã chuyển khoản đủ được giữ rau và xếp tuyến giao.</span></div></li>
+            <li><span class="h">18h</span><div><b>Rau tới tay bạn</b><span>Giao theo tuyến chung cư hoặc giao lẻ. Hôm sau tiệm gửi lời hỏi thăm qua Gmail.</span></div></li>
+          </ol>
+        </div>
+      </div>
+      <div class="why">
+        <div><h3>Không thuê mặt bằng</h3><p>Tiệm bán online, tiền mặt bằng dồn vào chăm rau.</p></div>
+        <div><h3>Không qua trung gian</h3><p>Rau đi thẳng từ vườn tới bếp nhà bạn.</p></div>
+        <div><h3>Gói vừa một bữa</h3><p>Khoảng 12.000–13.500 đ một gói 500 g, vừa một món rau cho bữa cơm gia đình.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec soft" id="dat-giao" aria-labelledby="dg-title">
+    <div class="in">
+      <h2 class="title" id="dg-title"><i>Đặt và</i><b>Giao rau</b></h2>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><h3>Chọn rau</h3><p>Thêm rau hoặc giỏ gợi ý vào giỏ hàng, tổng tiền hiện ngay.</p></div>
+        <div class="step"><span class="n">02</span><h3>Chọn ngày và giờ giao</h3><p>Hôm nay (đặt trước 12h) hoặc một ngày trong 14 ngày tới.</p></div>
+        <div class="step"><span class="n">03</span><h3>Quét mã QR</h3><p>Chuyển khoản 100%, nhận tin xác nhận có mã đơn.</p></div>
+      </div>
+      <div class="tables">
+        <div class="tbl"><h3>Đơn tối thiểu và phí giao</h3><div class="scroll"><table>
+          <thead><tr><th>Khoảng cách</th><th>Đơn tối thiểu</th><th>Phí giao</th></tr></thead>
+          <tbody><tr><td>Dưới 2 km</td><td class="num">50.000 đ</td><td class="num">10.000–20.000 đ</td></tr>
+          <tr><td>Từ 2 đến 5 km</td><td class="num">100.000 đ</td><td class="num">20.000–40.000 đ</td></tr>
+          <tr><td>Trên 5 km</td><td class="num">100.000 đ</td><td>Theo km, báo trước khi thanh toán</td></tr></tbody></table></div>
+          <p>Đơn từ 20 kg trở lên: đặt trước ít nhất 2–3 ngày để tiệm hái riêng cho đủ.</p></div>
+        <div class="tbl"><h3>Đóng gói</h3><div class="scroll"><table>
+          <thead><tr><th>Kiểu</th><th>Dành cho</th><th>Phụ thu</th></tr></thead>
+          <tbody><tr><td>Túi trong suốt 500 g, tem niêm phong</td><td>Mọi đơn</td><td class="num">0 đ</td></tr>
+          <tr><td>Hộp xốp</td><td>Đơn trên 5 km, đơn lớn</td><td class="num">15.000 đ</td></tr>
+          <tr><td>Túi giữ lạnh</td><td>Đơn trên 5 km, đơn lớn</td><td class="num">20.000 đ</td></tr></tbody></table></div>
+          <p>Đơn xa mà không chọn hộp xốp hay túi giữ lạnh thì rau có thể không tươi bằng khi tới nơi.</p></div>
+      </div>
+      <div class="policy">
+        <div><h3>Thanh toán 100% trước</h3><p>Rau hái mỗi sáng với số lượng có hạn, nên tiệm giữ rau khi bạn đã chuyển khoản đủ qua mã QR. Tiệm không giao được thì hoàn đủ tiền trong ngày.</p></div>
+        <div><h3>Đổi trả trong 24 giờ</h3><p>Rau dập, héo, úng, thiếu hoặc sai loại: quay video lúc mở túi (thấy tem niêm phong và mã đơn) rồi gửi tiệm qua Zalo. Đơn đầu tiên nhận cả ảnh chụp.</p></div>
+        <div><h3>Trả lời trong 2 giờ</h3><p>Tiệm nhận tin từ 7h đến 21h. Bạn chọn giao bù ở đơn sau hoặc nhận lại tiền.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="bao-quan" aria-labelledby="bq-title">
+    <div class="in">
+      <h2 class="title" id="bq-title"><i>Bảo quản</i><b>Và món ngon</b></h2>
+      <div class="arts">
+        <article class="art"><div class="ph"><img src="img/art-rau-la.jpg" alt="Lá rau xanh còn đọng nước" width="800" height="600" loading="lazy"></div><p class="m">Mẹo bảo quản</p><h3>Giữ rau ăn lá tươi lâu trong tủ lạnh</h3><p>Chưa rửa, để nguyên túi hoặc bọc giấy thấm, cho vào ngăn mát. Rửa ngay trước khi nấu để lá không úng.</p></article>
+        <article class="art"><div class="ph"><img src="img/rau-thom.jpg" alt="Nhánh húng quế có hoa tím" width="600" height="600" loading="lazy"></div><p class="m">Mẹo bảo quản</p><h3>Rau thơm và hành lá: đừng để chung</h3><p>Rau thơm cắm cuống vào ly nước như cắm hoa. Hành lá bọc giấy thấm khô rồi để ngăn mát.</p></article>
+        <article class="art"><div class="ph"><img src="img/art-gian-muop.jpg" alt="Giàn mướp hương có hoa vàng" width="800" height="600" loading="lazy"></div><p class="m">Món ngon</p><h3>Canh mồng tơi mướp hương cho ngày nóng</h3><p>Mướp gọt vỏ cắt khúc, nấu cùng mồng tơi và tôm khô; nêm nhạt để giữ vị ngọt của rau.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec soft" aria-labelledby="nk-title">
+    <div class="in">
+      <div class="headrow"><h2 class="title" id="nk-title"><i>Nhật ký</i><b>Vườn rau</b></h2><button class="link" type="button" data-chat="1">Theo dõi tiệm trên Zalo</button></div>
+    </div>
+    <div class="gram">
+      <img src="img/life-thu-hoach.jpg" alt="Rổ rau vừa hái" width="600" height="600" loading="lazy">
+      <img src="img/cai-ngot.jpg" alt="Luống cải ngọt trổ hoa vàng" width="600" height="600" loading="lazy">
+      <img src="img/life-luong-hanh.jpg" alt="Luống hành lá" width="600" height="600" loading="lazy">
+      <img src="img/muop-huong.jpg" alt="Quả mướp hương trên giàn" width="600" height="600" loading="lazy">
+      <img src="img/life-cho-rau.jpg" alt="Sạp rau xanh đủ loại" width="600" height="600" loading="lazy">
+      <img src="img/rau-den.jpg" alt="Lá rau dền đỏ" width="600" height="600" loading="lazy">
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="rv-title">
+    <div class="in rv">
+      <h2 class="title" id="rv-title"><i>Khách</i><b>Nói gì về tiệm</b></h2>
+      <div><p>Tiệm đang mời những khách đầu tiên dùng thử. Đánh giá thật kèm ảnh mở túi rau sẽ hiện ở đây, kể cả lời góp ý chưa vui và cách tiệm đã sửa.</p><div class="row-btn" style="margin-top:20px"><a class="btn" href="#rau">Đặt đơn đầu tiên <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+  </section>
+
+  <section class="sec soft" id="hoi-dap" aria-labelledby="faq-title">
+    <div class="in">
+      <h2 class="title center" id="faq-title"><i>Câu hỏi</i><b>Thường gặp</b></h2>
+      <div class="faq">
+        <details><summary>Rau có phun thuốc không?</summary><p>Tiệm ghi nhật ký chăm rau công khai: có phun gì, phun ngày nào và chờ bao nhiêu ngày mới hái. Mỗi tuần tiệm test nhanh dư lượng thuốc trừ sâu và đăng kết quả.</p></details>
+        <details><summary>Rau để được bao lâu?</summary><p>Tiệm đang tự đo số ngày còn ngon cho từng loại rau ở ngăn mát và sẽ ghi trên trang từng loại. Để nguyên túi, chưa rửa, cho vào ngăn mát là giữ tươi lâu nhất.</p></details>
+        <details><summary>Có trả tiền khi nhận hàng được không?</summary><p>Tiệm nhận thanh toán 100% qua chuyển khoản QR trước khi giao, vì rau hái mỗi sáng với số lượng có hạn. Tiệm không giao được thì hoàn đủ tiền trong ngày.</p></details>
+        <details><summary>Đặt rau cho ngày khác được không?</summary><p>Được. Trong giỏ hàng, bạn chọn ngày giao trong 14 ngày tới và khung giờ 17h–19h hoặc 6h–8h. Tiệm hái rau sáng hôm giao.</p></details>
+        <details><summary>Đặt số lượng lớn cho quán ăn được không?</summary><p>Được. Bạn bấm "Tư vấn" ở góc màn hình, chọn "Nhắn riêng với tiệm" rồi tích "Đặt số lượng lớn"; tiệm nhắn Zalo báo giá sỉ. Nhớ đặt trước 2–3 ngày.</p></details>
+        <details><summary>Giao tới khu nào?</summary><p>Tiệm giao theo tuyến chung cư ở TP.HCM và giao lẻ qua dịch vụ giao hàng. Phí giao theo khoảng cách, hiện trong giỏ hàng trước khi thanh toán.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="lien-he" aria-labelledby="su-title">
+    <div class="in signup">
+      <h2 id="su-title">Nhận tin rau mới hái mỗi sáng qua Zalo</h2>
+      <p>Mỗi sáng tiệm báo rau gì vừa hái và còn bao nhiêu gói. Đặt nhanh, hỏi nhanh, không bỏ lỡ rau ngon.</p>
+      <div class="row-btn" style="justify-content:center"><a class="btn" id="zalo-band" href="#lien-he">Vào nhóm Zalo <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a><button class="btn line" type="button" data-chat="1">Tư vấn ngay</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="ph"><img src="img/life-cho-rau.jpg" alt="Sạp rau xanh đủ loại" width="600" height="600" loading="lazy"></div>
+  <div class="cols">
+    <div><h4>Mua rau</h4><ul><li><a href="#rau">Rau hôm nay</a></li><li><a href="#gio">Giỏ rau gợi ý</a></li><li><a href="#dat-giao">Cách đặt và giao</a></li><li><a href="#dat-giao">Đổi trả</a></li></ul></div>
+    <div><h4>Về tiệm</h4><ul><li><a href="#vuon">Câu chuyện khu vườn</a></li><li><a href="#cam-ket">Cam kết minh bạch</a></li><li><a href="#bao-quan">Bảo quản và món ngon</a></li><li><a href="#hoi-dap">Hỏi đáp</a></li></ul></div>
+    <div><h4>Liên hệ</h4><ul><li id="foot-zalo">Zalo: (điền số Zalo tiệm)</li><li>Giờ nhận tin: 7h–21h</li><li>Chốt đơn 12h · Giao 18h</li></ul></div>
+    <div><h4>Thanh toán</h4><ul><li>Chuyển khoản qua mã QR</li><li>Thanh toán 100% trước khi giao</li><li>Hoàn tiền trong ngày nếu tiệm không giao được</li></ul></div>
+  </div>
+  <div class="legal">
+    <b>Tiệm Rau Sạch · Chủ cửa hàng Võ Thị Hồng Nhi</b>
+    <p>Tên hộ kinh doanh, mã số thuế, địa chỉ: (điền khi đăng ký kinh doanh). Bản giả định để phác thảo website; giá theo bảng giá ngày 22/11/2026.</p>
+    <p>Ảnh trên trang là ảnh minh hoạ, tiệm sẽ thay bằng ảnh chụp ở vườn. Ảnh từ Pexels (giấy phép Pexels); ảnh cải ngọt "Choi Sum stalks" của Earth100, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, qua Wikimedia Commons.</p>
+  </div>
+</footer>
+
+<button class="fab" id="fab" type="button" aria-expanded="false" aria-controls="chat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Tư vấn</button>
+<section class="chat" id="chat" hidden aria-label="Ô chat tư vấn">
+  <div class="chat-head"><div><b>Tiệm Rau Sạch</b><small>Trả lời trong 2 giờ · 7h–21h</small></div><div style="display:flex;align-items:center;gap:6px"><a class="zl" id="zalo-chat" href="#lien-he">Zalo</a><button class="x" id="chat-close" type="button" aria-label="Đóng ô chat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div>
+  <div class="log" id="log" role="log" aria-live="polite"></div>
+  <div class="acts" id="acts"></div>
+</section>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-labelledby="drawer-title" role="dialog" aria-modal="true">
+  <header><h2 id="drawer-title">Giỏ hàng</h2><button class="ic" id="drawer-close" type="button" aria-label="Đóng giỏ hàng"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></header>
+  <div class="content" id="drawer-content"></div>
+  <div class="foot" id="drawer-foot"></div>
+</aside>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title"><div class="box" id="modal-box"></div></div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+/* ===== CÀI ĐẶT CỦA TIỆM =====
+   ZALO_NUMBER: số Zalo của tiệm, chỉ chữ số (ví dụ "0901234567"). Để trống thì nút Zalo chưa mở được.
+   Ảnh: thư mục img/ cạnh index.html. Thay ảnh minh hoạ bằng ảnh vườn thật thì giữ nguyên tên file. */
+const ZALO_NUMBER='';
+const VEG=[
+ {k:'rau-muong',n:'Rau muống',g:'500 g',p:13000,kg:26000,w:.5,tag:'Bán chạy',cat:'xao',b:'Xào tỏi, luộc chấm, canh chua',alt:'Những bó rau muống tươi',keep:'Chưa rửa, để nguyên túi trong ngăn mát. Nhặt và rửa ngay trước khi nấu.'},
+ {k:'cai-ngot',n:'Cải ngọt',g:'500 g',p:13500,kg:27000,w:.5,tag:'Bán chạy',cat:'xao',b:'Xào thịt bò, nấu canh thịt bằm',alt:'Luống cải ngọt trổ hoa vàng',keep:'Chưa rửa, bọc giấy thấm, để ngăn mát.'},
+ {k:'cai-be-xanh',n:'Cải bẹ xanh',g:'500 g',p:13500,kg:27000,w:.5,tag:'Mới',cat:'canh',b:'Canh cải nấu tôm, cuốn thịt luộc',alt:'Lá cải bẹ xanh ngoài luống',keep:'Chưa rửa, bọc giấy thấm, để ngăn mát.'},
+ {k:'mong-toi',n:'Mồng tơi',g:'500 g',p:12000,kg:24000,w:.5,tag:'Mới',cat:'canh',b:'Canh mồng tơi nấu cua, tôm khô',alt:'Lá mồng tơi xanh',keep:'Để nguyên túi, ngăn mát; lá mềm nên nấu sớm.'},
+ {k:'rau-den',n:'Rau dền',g:'500 g',p:12000,kg:24000,w:.5,tag:'Mới',cat:'canh',b:'Canh rau dền, luộc chấm kho quẹt',alt:'Lá rau dền đỏ',keep:'Chưa rửa, để nguyên túi trong ngăn mát.'},
+ {k:'muop-huong',n:'Mướp hương',g:'1 kg',p:22000,kg:22000,w:1,tag:'',cat:'canh',b:'Canh mướp, mướp xào giá',alt:'Quả mướp hương trên giàn',keep:'Để nơi thoáng mát nếu nấu trong 1–2 ngày; lâu hơn thì cho ngăn mát.'},
+ {k:'hanh-la',n:'Hành lá',g:'100 g',p:5500,kg:55000,w:.1,tag:'Ăn kèm',cat:'giavi',b:'Rắc canh, phi mỡ hành',alt:'Hành lá trên thớt gỗ',keep:'Bọc giấy thấm khô, để ngăn mát.'},
+ {k:'rau-thom',n:'Rau thơm',g:'100 g',p:4500,kg:45000,w:.1,tag:'Ăn kèm',cat:'giavi',b:'Húng quế, tía tô, ngò ăn kèm',alt:'Nhánh húng quế có hoa tím',keep:'Cắm cuống vào ly nước như cắm hoa, hoặc bọc giấy ẩm để ngăn mát.'}];
+const CATS=[{id:'all',l:'Tất cả'},{id:'xao',l:'Rau xào, luộc'},{id:'canh',l:'Rau nấu canh'},{id:'giavi',l:'Gia vị'}];
+const COMBOS=[
+ {id:'canh',n:'Giỏ canh mát',img:'mong-toi',for:'Một nồi canh lớn cho 3–4 người',items:{'mong-toi':1,'rau-den':1,'muop-huong':1,'hanh-la':1}},
+ {id:'ba-bua',n:'Giỏ rau 3 bữa',img:'life-cho-rau',for:'Đủ rau cho 3 bữa cơm gia đình',items:{'rau-muong':2,'cai-ngot':1,'mong-toi':1,'muop-huong':1,'rau-thom':1,'hanh-la':1}},
+ {id:'ca-tuan',n:'Giỏ xanh cả tuần',img:'life-thu-hoach',for:'Rau cho cả tuần, đổi món mỗi ngày',items:{'rau-muong':3,'cai-ngot':2,'cai-be-xanh':2,'mong-toi':1,'rau-den':1,'muop-huong':1,'rau-thom':2,'hanh-la':1}}];
+const SLIDES=[
+ {img:'hero',alt:'Người làm vườn hái rau vào rổ',k:'Hái 6h sáng · Giao 18h',t:'Rau sạch nhà trồng, ăn là yên lòng',x:'Rau từ vườn nhà ở Đồng Nai, đóng túi có tem ngày hái và giao tới bếp nhà bạn lúc 6 giờ chiều cùng ngày.',b:'Xem rau hôm nay',href:'#rau'},
+ {img:'life-cho-rau',alt:'Sạp rau xanh đủ loại',k:'Giỏ rau gợi ý',t:'Giỏ rau 3 bữa 83.500đ',x:'Rau muống, cải ngọt, mồng tơi, mướp hương, rau thơm và hành lá, đủ cho 3 bữa cơm gia đình 3–4 người.',b:'Xem giỏ rau',href:'#gio'},
+ {img:'art-gian-muop',alt:'Giàn mướp hương có hoa vàng',k:'Đặt rau trước',t:'Đặt hôm nay, nhận rau ngày khác',x:'Chọn ngày giao trong 14 ngày tới, khung 17h–19h hoặc 6h–8h. Tiệm hái rau đúng sáng hôm giao.',b:'Đặt rau',href:'#cart'}];
+const SLOTS=[{id:'chieu',label:'17h–19h (giao chiều)'},{id:'sang',label:'6h–8h (sáng sớm)'}];
+const DIST=[{id:'d2',label:'Dưới 2 km',min:50000,ship:'10.000–20.000 đ'},{id:'d5',label:'Từ 2 đến 5 km',min:100000,ship:'20.000–40.000 đ'},{id:'dx',label:'Trên 5 km',min:100000,ship:'theo km, tiệm báo khi xác nhận'}];
+const PACK=[{id:'tui',label:'Túi thường',fee:0},{id:'xop',label:'Hộp xốp (+15.000 đ)',fee:15000},{id:'lanh',label:'Túi giữ lạnh (+20.000 đ)',fee:20000}];
+const REASONS=['Đặt số lượng lớn (từ 20 kg)','Thương lượng giá sỉ','Đặt rau định kỳ (giao theo lịch)','Yêu cầu đặc biệt về đóng gói','Giao ngoài giờ hoặc ngoài khu vực','Tư vấn rau cho bé, người lớn tuổi, ăn kiêng','Hỏi về cách trồng, có phun thuốc không','Đổi trả rau (dập, héo khi nhận)','Khác'];
+
+const $=s=>document.querySelector(s);
+const img=k=>'img/'+k+'.jpg';
+const vnd=n=>Number(n||0).toLocaleString('vi-VN')+' đ';
+const byK=Object.fromEntries(VEG.map(v=>[v.k,v]));
+const put=(p,...n)=>p.append(...n.flat().filter(x=>x!=null&&x!==false));
+function el(t,a={},...k){const e=document.createElement(t);for(const[x,v]of Object.entries(a)){if(v==null||v===false)continue;if(x==='class')e.className=v;else if(x==='text')e.textContent=v;else if(x==='html')e.innerHTML=v;else if(x.startsWith('on'))e.addEventListener(x.slice(2),v);else e.setAttribute(x,v===true?'':v)}for(const c of k.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e}
+const ARROW='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg>';
+const BAG='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.5 11h-11z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M12 11v5M9.5 13.5h5"/></svg>';
+const dayVN=()=>{try{return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Saigon'}).format(new Date())}catch{return new Date().toISOString().slice(0,10)}};
+const hourVN=()=>{try{return Number(new Intl.DateTimeFormat('en-GB',{hour:'2-digit',hour12:false,timeZone:'Asia/Saigon'}).format(new Date()))%24}catch{return new Date().getHours()}};
+const DU=s=>Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10));
+const addDays=(s,n)=>new Date(DU(s)+n*864e5).toISOString().slice(0,10);
+const DOW=['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'];
+const dlabel=s=>DOW[new Date(DU(s)).getUTCDay()]+' '+s.slice(8)+'/'+s.slice(5,7);
+function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2200)}
+
+/* ===== Hero chuyển tin ===== */
+let slide=0,timer=null;
+function showSlide(i){slide=(i+SLIDES.length)%SLIDES.length;const s=SLIDES[slide];const im=$('#hero-img');im.src=img(s.img);im.alt=s.alt;
+  $('#hero-k').textContent=s.k;$('#hero-t').textContent=s.t;$('#hero-x').textContent=s.x;$('#hero-bl').textContent=s.b;$('#hero-b').setAttribute('href',s.href);
+  [...$('#dots').children].forEach((d,j)=>d.setAttribute('aria-current',String(j===slide)))}
+function startTimer(){clearInterval(timer);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;timer=setInterval(()=>showSlide(slide+1),7000)}
+$('#dots').append(...SLIDES.map((s,i)=>el('button',{type:'button','aria-label':'Tin '+(i+1)+': '+s.k,onclick:()=>{showSlide(i);startTimer()}})));
+$('#hero-b').addEventListener('click',e=>{if($('#hero-b').getAttribute('href')==='#cart'){e.preventDefault();openCart(true)}});
+SLIDES.forEach(s=>{const p=new Image();p.src=img(s.img)});
+
+/* ===== Rau hôm nay ===== */
+let cat='all',query='';
+function renderTabs(){$('#tabs').replaceChildren(...CATS.map(c=>el('button',{class:'tab',type:'button','aria-pressed':String(c.id===cat),onclick:()=>{cat=c.id;renderTabs();renderProducts()}},c.l)))}
+function renderProducts(){
+  const q=query.trim().toLowerCase();
+  const list=VEG.filter(v=>(cat==='all'||v.cat===cat)&&(!q||(v.n+' '+v.b).toLowerCase().includes(q)));
+  const cards=list.map(v=>el('article',{class:'card'},
+    el('button',{class:'ph',type:'button','aria-label':'Xem chi tiết '+v.n,onclick:()=>openModal(v)},el('img',{src:img(v.k),alt:v.alt,width:'600',height:'600',loading:'lazy'}),v.tag?el('span',{class:'badge',text:v.tag}):null),
+    el('div',{class:'row'},el('div',{},el('h3',{text:v.n}),el('p',{class:'ds',text:'Gói '+v.g+' · '+v.b}),el('p',{class:'pr'},vnd(v.p),el('small',{text:vnd(v.kg)+'/kg'}))),
+      el('button',{class:'bag',type:'button','aria-label':'Thêm '+v.n+' vào giỏ',html:BAG,onclick:()=>{add(v.k);toast('Đã thêm '+v.n+' vào giỏ')}}))));
+  if(!cards.length)cards.push(el('p',{class:'empty',text:'Không tìm thấy "'+query+'". Thử tên khác hoặc hỏi tiệm qua nút Tư vấn.'}));
+  $('#slider').replaceChildren(...cards);$('#slider').scrollLeft=0;updateProg();
+}
+function updateProg(){const s=$('#slider');const max=s.scrollWidth-s.clientWidth;const vis=Math.min(1,s.clientWidth/Math.max(s.scrollWidth,1));const p=$('#prog');p.style.width=(vis*100)+'%';p.style.left=(max>0?(s.scrollLeft/max)*(100-vis*100):0)+'%'}
+$('#slider').addEventListener('scroll',updateProg,{passive:true});addEventListener('resize',updateProg);
+const step=d=>{const s=$('#slider');const c=s.querySelector('.card');s.scrollBy({left:d*((c?c.offsetWidth:300)+24),behavior:'smooth'})};
+$('#prev').addEventListener('click',()=>step(-1));$('#next').addEventListener('click',()=>step(1));
+
+function renderCombos(){$('#combos').replaceChildren(...COMBOS.map(c=>{const total=Object.entries(c.items).reduce((t,[k,n])=>t+byK[k].p*n,0);const packs=Object.values(c.items).reduce((a,b)=>a+b,0);
+  return el('article',{class:'combo'},el('div',{class:'ph'},el('img',{src:img(c.img),alt:'',width:'600',height:'600',loading:'lazy'})),
+    el('div',{class:'bd'},el('p',{class:'for',text:c.for}),el('h3',{text:c.n}),
+      el('ul',{},...Object.entries(c.items).map(([k,n])=>el('li',{},el('span',{text:n+' × '+byK[k].n+' ('+byK[k].g+')'}),el('span',{text:vnd(byK[k].p*n)})))),
+      el('div',{class:'tot'},el('span',{text:packs+' gói'}),el('b',{text:vnd(total)})),
+      el('button',{class:'btn block',type:'button',html:'<span>Thêm giỏ này</span>'+BAG,onclick:()=>{for(const[k,n]of Object.entries(c.items))cart[k]=(cart[k]||0)+n;saveCart();updateCount();openCart()}})))}))}
+
+/* ===== Xem nhanh ===== */
+let lastFocus=null;
+function openModal(v){lastFocus=document.activeElement;
+  $('#modal-box').replaceChildren(el('div',{class:'ph'},el('img',{src:img(v.k),alt:v.alt,width:'600',height:'600'})),
+    el('div',{class:'info'},el('p',{class:'cond',style:'color:var(--muted)',text:'Gói '+v.g+(v.tag?' · '+v.tag:'')}),el('h2',{id:'m-title',text:v.n}),
+      el('p',{class:'price-big'},vnd(v.p),el('small',{text:vnd(v.kg)+'/kg'})),
+      el('dl',{},el('dt',{text:'Trồng ở'}),el('dd',{text:'Vườn nhà ở Đồng Nai'}),el('dt',{text:'Thu hoạch'}),el('dd',{text:'Hái lúc 6h sáng hôm giao; ngày hái in trên tem'}),
+        el('dt',{text:'Món gợi ý'}),el('dd',{text:v.b}),el('dt',{text:'Bảo quản'}),el('dd',{text:v.keep}),el('dt',{text:'Để được'}),el('dd',{text:'Tiệm đang tự đo số ngày còn ngon ở ngăn mát'})),
+      el('div',{class:'row-btn'},el('button',{class:'btn',type:'button',html:'<span>Thêm vào giỏ</span>'+BAG,onclick:()=>{add(v.k);closeModal();toast('Đã thêm '+v.n+' vào giỏ')}}),el('button',{class:'btn line',type:'button',id:'m-close',onclick:closeModal},'Đóng'))));
+  $('#modal').hidden=false;$('#scrim').hidden=false;$('#m-close').focus()}
+function closeModal(){$('#modal').hidden=true;if($('#drawer').hidden)$('#scrim').hidden=true;if(lastFocus)lastFocus.focus()}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.addEventListener('click',e=>{const a=e.target.closest('[data-add]');if(a){add(a.dataset.add);toast('Đã thêm '+byK[a.dataset.add].n+' vào giỏ')}const v=e.target.closest('[data-view]');if(v)openModal(byK[v.dataset.view]);if(e.target.closest('[data-chat]'))openChat()});
+
+/* ===== Giỏ hàng ===== */
+let cart={};
+try{cart=JSON.parse(localStorage.getItem('trs-cart')||'{}')||{}}catch{cart={}}
+for(const k of Object.keys(cart))if(!byK[k])delete cart[k];
+const saveCart=()=>{try{localStorage.setItem('trs-cart',JSON.stringify(cart))}catch{}};
+const add=k=>{cart[k]=(cart[k]||0)+1;saveCart();updateCount()};
+const setQty=(k,n)=>{if(n<=0)delete cart[k];else cart[k]=n;saveCart();updateCount();renderCart()};
+const subtotal=()=>VEG.reduce((t,v)=>t+(cart[v.k]||0)*v.p,0);
+const kgTotal=()=>VEG.reduce((t,v)=>t+(cart[v.k]||0)*v.w,0);
+const count=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+function updateCount(){$('#cart-count').textContent='('+count()+')'}
+let opt={date:'',slot:'chieu',dist:'d2',pack:'tui'};let stepC='cart';let order=null;
+function dateOptions(){const today=dayVN(),out=[];if(hourVN()<12)out.push({v:today,l:'Hôm nay, '+dlabel(today)+' (đặt trước 12h)'});for(let i=1;i<=14;i++){const d=addDays(today,i);out.push({v:d,l:dlabel(d)})}return out}
+function openCart(later){stepC='cart';if(later)opt.date=addDays(dayVN(),1);renderCart();$('#scrim').hidden=false;$('#drawer').hidden=false;$('#drawer-close').focus()}
+function closeCart(){$('#scrim').hidden=true;$('#drawer').hidden=true;$('#cart-btn').focus()}
+function renderCart(){
+  const c=$('#drawer-content'),f=$('#drawer-foot');c.replaceChildren();f.replaceChildren();
+  if(stepC==='cart'){
+    $('#drawer-title').textContent='Giỏ hàng';
+    if(!count()){put(c,el('p',{class:'empty',text:'Giỏ hàng đang trống. Chọn rau ở mục "Rau hôm nay" hoặc một giỏ gợi ý nhé.'}));put(f,el('a',{class:'btn block',href:'#rau',html:'<span>Chọn rau</span>'+ARROW,onclick:closeCart}));return}
+    for(const v of VEG.filter(v=>cart[v.k]))put(c,el('div',{class:'line'},el('img',{src:img(v.k),alt:''}),
+      el('div',{},el('div',{class:'name',text:v.n}),el('div',{class:'sub',text:'Gói '+v.g+' · '+vnd(v.p)})),
+      el('div',{class:'stepper'},el('button',{type:'button','aria-label':'Bớt '+v.n,onclick:()=>setQty(v.k,cart[v.k]-1)},'−'),el('span',{text:cart[v.k]}),el('button',{type:'button','aria-label':'Thêm '+v.n,onclick:()=>setQty(v.k,cart[v.k]+1)},'+'))));
+    const dates=dateOptions();if(!dates.some(d=>d.v===opt.date))opt.date=dates[0].v;
+    const sel=(id,label,items,key,hint)=>{const s=el('select',{id},...items.map(i=>el('option',{value:i.id||i.v,text:i.label||i.l,selected:(i.id||i.v)===opt[key]})));s.addEventListener('change',()=>{opt[key]=s.value;renderCart()});return el('div',{class:'field'},el('label',{for:id,text:label}),s,hint?el('span',{class:'hint',text:hint}):null)};
+    if(opt.dist!=='dx')opt.pack='tui';
+    put(c,el('div',{class:'two'},sel('o-date','Ngày giao',dates,'date'),sel('o-slot','Khung giờ',SLOTS,'slot')),sel('o-dist','Khoảng cách từ tiệm tới bạn',DIST,'dist'),
+      opt.dist==='dx'?sel('o-pack','Giữ rau tươi khi đi xa',PACK,'pack','Không chọn thì rau đi xa có thể không tươi bằng.'):null);
+    const d=DIST.find(x=>x.id===opt.dist),pk=PACK.find(x=>x.id===opt.pack),sub=subtotal(),need=Math.max(0,d.min-sub);
+    const bigLate=kgTotal()>=20&&opt.date<addDays(dayVN(),2);
+    if(need)put(c,el('p',{class:'warn',text:'Đơn tối thiểu cho khoảng cách này là '+vnd(d.min)+'. Thêm '+vnd(need)+' nữa để đặt được.'}));
+    if(bigLate)put(c,el('p',{class:'warn',text:'Đơn từ 20 kg cần đặt trước ít nhất 2 ngày. Bạn chọn ngày giao xa hơn nhé.'}));
+    put(f,el('div',{class:'sumrow'},el('span',{text:'Tiền rau ('+count()+' gói)'}),el('span',{text:vnd(sub)})),
+      pk.fee?el('div',{class:'sumrow'},el('span',{text:pk.label.split(' (')[0]}),el('span',{text:vnd(pk.fee)})):null,
+      el('div',{class:'sumrow'},el('span',{text:'Phí giao'}),el('span',{text:d.ship})),
+      el('div',{class:'sumrow total'},el('span',{text:'Tạm tính'}),el('span',{text:vnd(sub+pk.fee)})),
+      el('p',{style:'font-size:.8rem;color:var(--muted)',text:'Thanh toán 100% qua chuyển khoản QR. Phí giao cộng thêm theo khoảng cách.'}),
+      el('button',{class:'btn block',type:'button',disabled:need>0||bigLate,html:'<span>Tiếp tục</span>'+ARROW,onclick:()=>{stepC='info';renderCart()}}));
+  }else if(stepC==='info'){
+    $('#drawer-title').textContent='Thông tin giao';
+    const fld=(id,l,type,ac,ph)=>el('div',{class:'field'},el('label',{for:id,text:l}),el('input',{id,type,autocomplete:ac,placeholder:ph||''}));
+    put(c,fld('i-name','Họ và tên *','text','name'),fld('i-phone','Số điện thoại *','tel','tel','09xx xxx xxx'),fld('i-email','Gmail *','email','email','ten@gmail.com'),fld('i-addr','Địa chỉ giao *','text','street-address'),
+      el('div',{class:'field'},el('label',{for:'i-note',text:'Ghi chú'}),el('textarea',{id:'i-note',rows:'2',placeholder:'Cổng chung cư, gọi trước khi giao…'})),
+      el('label',{class:'check',for:'i-ok'},el('input',{type:'checkbox',id:'i-ok'}),el('span',{text:'Tôi đã đọc quy định thanh toán 100% trước và đổi trả (quay video lúc mở túi rau trong 24 giờ). *'})),
+      el('p',{class:'err',id:'i-err',role:'alert'}));
+    put(f,el('button',{class:'btn block',type:'button',html:'<span>Thanh toán '+vnd(subtotal()+PACK.find(x=>x.id===opt.pack).fee)+'</span>'+ARROW,onclick:toQR}),el('button',{class:'btn line block',type:'button',onclick:()=>{stepC='cart';renderCart()}},'Quay lại giỏ'));
+  }else if(stepC==='qr'){
+    $('#drawer-title').textContent='Quét mã QR';
+    put(c,el('div',{class:'demo',text:'Bản thử – vui lòng không chuyển tiền'}),
+      el('div',{class:'qr',text:'Mã QR tài khoản của tiệm sẽ hiện ở đây, đã điền sẵn số tiền và mã đơn.'}),
+      el('dl',{class:'kv'},el('dt',{text:'Số tiền'}),el('dd',{text:vnd(order.total)+' + phí giao'}),el('dt',{text:'Nội dung'}),el('dd',{text:order.code}),el('dt',{text:'Chủ tài khoản'}),el('dd',{text:'Võ Thị Hồng Nhi'}),el('dt',{text:'Giao'}),el('dd',{text:dlabel(order.date)+', '+SLOTS.find(s=>s.id===order.slot).label})),
+      el('p',{style:'font-size:.88rem;color:var(--muted)',text:'Tiệm giữ rau cho bạn 15 phút. Tiệm không bao giờ hỏi mã OTP.'}));
+    put(f,el('button',{class:'btn block',type:'button',html:'<span>Tôi đã chuyển khoản</span>'+ARROW,onclick:()=>{stepC='done';renderCart()}}),el('button',{class:'btn line block',type:'button',onclick:()=>{stepC='info';renderCart()}},'Quay lại'));
+  }else{
+    $('#drawer-title').textContent='Đặt rau thành công';
+    put(c,el('p',{style:'font-family:var(--serif);font-size:1.6rem;color:var(--ink)',text:'Cảm ơn bạn đã tin tiệm!'}),
+      el('dl',{class:'kv'},el('dt',{text:'Mã đơn'}),el('dd',{text:order.code}),el('dt',{text:'Rau'}),el('dd',{text:order.items}),el('dt',{text:'Giao'}),el('dd',{text:dlabel(order.date)+', '+SLOTS.find(s=>s.id===order.slot).label})),
+      el('p',{class:'warn',text:'Nhớ quay video lúc mở túi rau (thấy tem niêm phong và mã đơn) để tiệm đổi ngay nếu rau có vấn đề.'}),
+      el('p',{style:'color:var(--muted);font-size:.92rem',text:'Bản thử: đơn này chưa được gửi đi. Khi web chạy thật, tiệm nhận đơn, xác nhận qua Zalo hoặc Gmail và gửi lời hỏi thăm sau khi giao.'}));
+    put(f,el('button',{class:'btn block',type:'button',html:'<span>Xong</span>'+ARROW,onclick:()=>{cart={};saveCart();updateCount();closeCart()}}));
+  }
+}
+function toQR(){
+  const g=id=>$(id).value.trim();const errs=[];
+  if(!g('#i-name'))errs.push('Điền họ và tên.');
+  const pd=g('#i-phone').replace(/\D/g,'');if(pd.length<9||pd.length>12)errs.push('Số điện thoại chưa đúng.');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g('#i-email')))errs.push('Gmail chưa đúng dạng.');
+  if(!g('#i-addr'))errs.push('Điền địa chỉ giao.');
+  if(!$('#i-ok').checked)errs.push('Tích ô đã đọc quy định.');
+  if(errs.length){$('#i-err').textContent=errs.join(' ');return}
+  const items=VEG.filter(v=>cart[v.k]).map(v=>cart[v.k]+' '+v.n.toLowerCase()).join(', ');
+  order={code:'RS'+opt.date.slice(8)+opt.date.slice(5,7)+'-'+Math.random().toString(36).slice(2,5).toUpperCase(),total:subtotal()+PACK.find(x=>x.id===opt.pack).fee,date:opt.date,slot:opt.slot,items};
+  stepC='qr';renderCart();
+}
+
+/* ===== Ô chat tư vấn ===== */
+const zaloUrl=()=>ZALO_NUMBER?'https://zalo.me/'+ZALO_NUMBER.replace(/\D/g,''):'';
+const log=$('#log'),acts=$('#acts');let chatStarted=false,picked=[];
+function say(who,content){const m=el('div',{class:'msg '+who});if(typeof content==='string')m.textContent=content;else m.append(content);log.append(m);log.scrollTop=log.scrollHeight}
+const bot=c=>say('bot',c),me=c=>say('me',c);
+const setActs=(...n)=>acts.replaceChildren(...n.filter(Boolean));
+function openChat(){$('#chat').hidden=false;$('#fab').setAttribute('aria-expanded','true');if(!chatStarted){chatStarted=true;bot('Chào bạn, Tiệm Rau Sạch đây. Rau hôm nay hái lúc 6h sáng, vẫn còn tươi lắm. Bạn muốn tiệm giúp gì nè?');menu()}}
+function closeChat(){$('#chat').hidden=true;$('#fab').setAttribute('aria-expanded','false')}
+function menu(){setActs(el('div',{class:'chips'},
+  el('button',{class:'chip',type:'button',onclick:showPrices},'Rau và giá hôm nay'),
+  el('button',{class:'chip',type:'button',onclick:showShip},'Cách đặt và giao'),
+  el('button',{class:'chip',type:'button',onclick:()=>{me('Đặt rau giao ngày khác');bot('Bạn chọn rau, rồi chọn ngày giao (tối đa 14 ngày tới) và khung giờ ngay trong giỏ hàng nhé.');closeChat();openCart(true)}},'Đặt rau giao ngày khác'),
+  el('button',{class:'chip',type:'button',onclick:startPrivate},'Nhắn riêng với tiệm')))}
+function back(){bot('Bạn cần gì cứ chọn ở dưới nha.');menu()}
+function showPrices(){me('Rau và giá hôm nay');bot(el('div',{},el('div',{text:'Giá rau của tiệm (số gói còn cập nhật mỗi sáng trên nhóm Zalo):'}),el('table',{},...VEG.map(v=>el('tr',{},el('td',{text:v.n+' ('+v.g+')'}),el('td',{style:'text-align:right;white-space:nowrap',text:vnd(v.p)}))))));bot('Đặt trước 12h để nhận rau lúc 18h cùng ngày nhé.');menu()}
+function showShip(){me('Cách đặt và giao');bot('• Đặt trước 12h, tiệm giao lúc 18h cùng ngày; hoặc chọn ngày khác trong 14 ngày tới.\n• Dưới 2 km: đơn từ 50.000 đ, phí giao 10.000–20.000 đ.\n• Từ 2 đến 5 km: đơn từ 100.000 đ, phí giao 20.000–40.000 đ.\n• Trên 5 km: phí theo km; thêm hộp xốp (+15.000 đ) hoặc túi giữ lạnh (+20.000 đ).\n• Thanh toán 100% qua chuyển khoản QR.\n• Đơn từ 20 kg: đặt trước 2–3 ngày.');menu()}
+function startPrivate(){me('Nhắn riêng với tiệm');bot('Bạn muốn tiệm tư vấn về điều gì? Bạn tích một hoặc nhiều mục nhé.');picked=[];
+  const next=el('button',{class:'btn sm',type:'button',disabled:true,onclick:askContact},'Tiếp tục');
+  setActs(...REASONS.map((r,i)=>el('label',{class:'check',for:'rs-'+i},el('input',{type:'checkbox',id:'rs-'+i,onchange:()=>{picked=REASONS.filter((_,j)=>$('#rs-'+j).checked);next.disabled=!picked.length}}),el('span',{text:r}))),
+    el('div',{class:'chips'},next,el('button',{class:'btn line sm',type:'button',onclick:back},'Quay lại')))}
+function askContact(){me(picked.join('\n'));bot('Bạn để lại thông tin, tiệm sẽ trả lời bạn qua Zalo trong vòng 2 giờ (7h–21h).');
+  const f=el('form',{novalidate:true,style:'display:flex;flex-direction:column;gap:8px'},
+    el('div',{class:'two'},el('div',{class:'field'},el('label',{for:'c-name',text:'Họ và tên *'}),el('input',{id:'c-name',type:'text',autocomplete:'name'})),el('div',{class:'field'},el('label',{for:'c-phone',text:'Số điện thoại *'}),el('input',{id:'c-phone',type:'tel',autocomplete:'tel'}))),
+    el('div',{class:'two'},el('div',{class:'field'},el('label',{for:'c-email',text:'Gmail *'}),el('input',{id:'c-email',type:'email',autocomplete:'email'})),el('div',{class:'field'},el('label',{for:'c-zalo',text:'Zalo'}),el('input',{id:'c-zalo',type:'tel',placeholder:'Nếu khác số điện thoại'}))),
+    el('div',{class:'field'},el('label',{for:'c-note',text:'Ghi chú'}),el('textarea',{id:'c-note',rows:'2',placeholder:'Loại rau, số kg, ngày cần giao, mã đơn (nếu đổi trả)…'})),
+    el('label',{class:'check',for:'c-ok'},el('input',{type:'checkbox',id:'c-ok'}),el('span',{text:'Tôi đồng ý cho tiệm liên hệ qua điện thoại, Zalo để tư vấn. *'})),
+    el('label',{class:'check',for:'c-ok2'},el('input',{type:'checkbox',id:'c-ok2'}),el('span',{text:'Tôi muốn nhận tin ưu đãi qua Zalo (không bắt buộc).'})),
+    el('p',{class:'err',id:'c-err',role:'alert'}),
+    el('div',{class:'chips'},el('button',{class:'btn sm',type:'submit'},'Gửi cho tiệm'),el('button',{class:'btn line sm',type:'button',onclick:back},'Huỷ')));
+  f.addEventListener('submit',e=>{e.preventDefault();sendPrivate()});setActs(f)}
+function sendPrivate(){const g=id=>$(id).value.trim();const errs=[];
+  if(!g('#c-name'))errs.push('Điền họ và tên.');const pd=g('#c-phone').replace(/\D/g,'');if(pd.length<9||pd.length>12)errs.push('Số điện thoại chưa đúng.');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g('#c-email')))errs.push('Gmail chưa đúng dạng.');if(!$('#c-ok').checked)errs.push('Tích ô đồng ý để tiệm liên hệ.');
+  if(errs.length){$('#c-err').textContent=errs.join(' ');return}
+  const text=['Chào tiệm Rau Sạch, mình cần tư vấn:','- '+picked.join('\n- '),'Tên: '+g('#c-name'),'SĐT: '+g('#c-phone'),'Gmail: '+g('#c-email'),g('#c-zalo')?'Zalo: '+g('#c-zalo'):'',g('#c-note')?'Ghi chú: '+g('#c-note'):'',$('#c-ok2').checked?'Muốn nhận tin ưu đãi qua Zalo.':''].filter(Boolean).join('\n');
+  me('Đã điền thông tin');
+  const url=zaloUrl();
+  const copy=async btn=>{try{await navigator.clipboard.writeText(text);if(btn)btn.textContent='Đã chép tin nhắn';return true}catch{if(btn)btn.textContent='Bôi đen tin nhắn để chép';return false}};
+  const pre=el('pre',{style:'white-space:pre-wrap;font:inherit;font-size:.84rem;background:var(--soft);border-radius:4px;padding:10px;margin:0;user-select:all',text:text});
+  if(url){bot('Bấm "Gửi qua Zalo": tin nhắn được chép sẵn, Zalo của tiệm sẽ mở ra, bạn chỉ cần dán và gửi. Tiệm trả lời trong 2 giờ.');
+    setActs(pre,el('div',{class:'chips'},el('a',{class:'btn sm',href:url,target:'_blank',rel:'noopener',onclick:()=>{copy()}},'Gửi qua Zalo'),el('button',{class:'btn line sm',type:'button',onclick:e=>copy(e.currentTarget)},'Chép tin nhắn'),el('button',{class:'btn line sm',type:'button',onclick:back},'Về menu')));
+  }else{bot('Tiệm đang cập nhật số Zalo trên web. Bạn chép tin nhắn dưới đây và gửi qua nhóm Zalo của tiệm nhé.');
+    setActs(pre,el('div',{class:'chips'},el('button',{class:'btn sm',type:'button',onclick:e=>copy(e.currentTarget)},'Chép tin nhắn'),el('button',{class:'btn line sm',type:'button',onclick:back},'Về menu')))}
+}
+
+/* ===== Khung chung ===== */
+$('#cart-btn').addEventListener('click',()=>openCart());
+$('#drawer-close').addEventListener('click',closeCart);
+$('#scrim').addEventListener('click',()=>{if(!$('#modal').hidden)closeModal();else closeCart()});
+addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(!$('#modal').hidden)closeModal();else if(!$('#drawer').hidden)closeCart();else if(!$('#chat').hidden)closeChat();else if(!$('#searchbar').hidden)toggleSearch(false)});
+$('#menu-btn').addEventListener('click',()=>{const m=$('#menu');m.hidden=!m.hidden;$('#menu-btn').setAttribute('aria-expanded',String(!m.hidden))});
+$('#menu').addEventListener('click',e=>{if(e.target.tagName==='A'){$('#menu').hidden=true;$('#menu-btn').setAttribute('aria-expanded','false')}});
+function toggleSearch(open){$('#searchbar').hidden=!open;$('#search-btn').setAttribute('aria-expanded',String(open));if(open)$('#q').focus();else if(query){query='';$('#q').value='';renderProducts()}}
+$('#search-btn').addEventListener('click',()=>toggleSearch($('#searchbar').hidden));
+$('#search-close').addEventListener('click',()=>toggleSearch(false));
+$('#q').addEventListener('input',e=>{query=e.target.value;cat='all';renderTabs();renderProducts();if(query)document.getElementById('rau').scrollIntoView({behavior:'smooth',block:'start'})});
+$('#fab').addEventListener('click',()=>{$('#chat').hidden?openChat():closeChat()});
+$('#chat-close').addEventListener('click',closeChat);
+(function wireZalo(){const u=zaloUrl();for(const id of['#zalo-band','#zalo-chat']){const a=$(id);
+  if(u){a.href=u;a.target='_blank';a.rel='noopener'}else{a.addEventListener('click',e=>{e.preventDefault();openChat();bot('Số Zalo của tiệm sẽ sớm có ở đây. Bạn chọn "Nhắn riêng với tiệm" để để lại thông tin nhé.');menu()})}}
+  if(u)$('#foot-zalo').textContent='Zalo: '+ZALO_NUMBER})();
+showSlide(0);startTimer();renderTabs();renderProducts();renderCombos();updateCount();
+</script>
+
+</body>
+</html>
